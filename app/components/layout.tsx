@@ -11,7 +11,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <main className="w-full px-4 bg-sidebar/30 max-w-full overflow-x-hidden">
+      <main className="w-full px-4 max-w-full overflow-x-hidden bg-white">
         <nav className="h-[8vh] flex items-center  py-4">
           <SidebarTrigger />
           {shouldDisplayBackButton && (

@@ -14,7 +14,7 @@ export default function ProgressionRoute() {
 
   return (
     <>
-      <header className="w-fit flex items-center p-4 rounded-2xl mb-2">
+      <header className="w-fit h-[10vh] flex items-center p-4 rounded-2xl mb-2">
         <h1 className="text-2xl font-bold text-foreground max-w-none lg:max-w-[50vw] line-clamp-2 break-words overflow-hidden text-ellipsis">
           {data.name}
         </h1>

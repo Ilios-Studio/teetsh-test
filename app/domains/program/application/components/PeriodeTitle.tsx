@@ -22,7 +22,10 @@ export function PeriodeTitle({ periode }: PeriodeProps) {
 
   return (
     <section
-      className={cn("sticky top-0 z-20 w-3xs p-2 rounded-t-lg", color50Class)}
+      className={cn(
+        "shrink-0 sticky top-0 z-20 w-3xs p-2 rounded-t-lg",
+        color50Class
+      )}
     >
       <header
         className={cn(

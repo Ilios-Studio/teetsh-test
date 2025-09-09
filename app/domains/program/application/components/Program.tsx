@@ -15,15 +15,8 @@ export function Program({ data }: ProgramProps) {
     matieres[0]
   );
 
-  const matieresToDisplay = matieres.map((m) => m.name);
   const domaines =
     matieres.find((m) => m.id === selectedMatiere?.id)?.domaines ?? [];
-
-  const gridStyle = {
-    display: "grid",
-    gridTemplateColumns: `repeat(${periodes.length}, 1fr)`,
-    gridTemplateRows: `auto repeat(${domaines.length}, minmax(auto, auto))`,
-  };
 
   return (
     <section>
@@ -42,18 +35,22 @@ export function Program({ data }: ProgramProps) {
           </Button>
         ))}
       </div>
-      <div className="gap-x-2 overflow-y-auto pb-4 " style={gridStyle}>
-        {periodes.map((p) => (
-          <PeriodeTitle key={p.id} periode={p} />
-        ))}
-        {domaines.map((d) => (
-          <Domain
-            key={d.id}
-            domain={d}
-            periodes={periodes}
-            isLast={d === domaines[domaines.length - 1]}
-          />
-        ))}
+      <div className="max-h-[72vh] overflow-auto pb-4 ">
+        <div className="flex gap-x-2 sticky top-0 z-10 bg-white">
+          {periodes.map((p) => (
+            <PeriodeTitle key={p.id} periode={p} />
+          ))}
+        </div>
+        <div className="w-full min-w-fit">
+          {domaines.map((d) => (
+            <Domain
+              key={d.id}
+              domain={d}
+              periodes={periodes}
+              isLast={d === domaines[domaines.length - 1]}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

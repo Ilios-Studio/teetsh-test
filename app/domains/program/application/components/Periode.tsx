@@ -22,7 +22,11 @@ export function Periode({ periode, items, isLast }: PeriodeProps) {
 
   return (
     <section
-      className={cn("w-3xs p-2", color50Class, isLast && "rounded-b-lg")}
+      className={cn(
+        "shrink-0 w-3xs p-2",
+        color50Class,
+        isLast && "rounded-b-lg"
+      )}
     >
       <main className="flex flex-col gap-2 py-2">
         {items?.map((item) => (

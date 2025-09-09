@@ -1,6 +1,9 @@
 @import "tailwindcss";
+
+/* HACK PAS BEAU MAIS QUI FONCTIONNE POUR LES COULEURS DYNAMIQUES AVEC TAILWIND*/
 @source inline("bg-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-200");
 @source inline("bg-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-300");
+@source inline("bg-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-400");
 
 @source inline("bg-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-50");
 @source inline("{hover:,}border-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-400");
@@ -25,7 +28,7 @@ body {
 }
 
 :root {
-  --background: #f7f5f3;
+  --background: #f8f8f8;
   --foreground: #183d4d;
   --card: #ffffff;
   --card-foreground: #183d4d;
@@ -71,6 +74,8 @@ body {
   --shadow-lg: 0px 1px 2.5px 0px #ded9d4, 0px 4px 6px -1px #ded9d4;
   --shadow-xl: 0px 1px 2.5px 0px #ded9d4, 0px 8px 10px -1px #ded9d4;
   --shadow-2xl: 0px 1px 2.5px 0px #ded9d4;
+
+  --sand: #f5f5f5;
 }
 
 .dark {
@@ -114,6 +119,8 @@ body {
   --shadow-lg: 0px 1px 2px 0px #000000, 0px 4px 6px -1px #000000;
   --shadow-xl: 0px 1px 2px 0px #000000, 0px 8px 10px -1px #000000;
   --shadow-2xl: 0px 1px 2px 0px #000000;
+
+  --sand: #171a24;
 }
 
 @theme inline {
