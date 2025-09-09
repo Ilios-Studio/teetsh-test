@@ -19,109 +19,95 @@ body {
 }
 
 :root {
-  --background: #fafafa;
-  --foreground: #3d3929;
-  --card: #fafafa;
-  --card-foreground: #141413;
-  --popover: #ffffff;
-  --popover-foreground: #28261b;
-  --primary: #c96442;
-  --primary-foreground: #ffffff;
-  --secondary: #f0efea;
-  --secondary-foreground: #535146;
-  --muted: #f0efea;
-  --muted-foreground: #83827d;
-  --accent: #f0efea;
-  --accent-foreground: #28261b;
-  --destructive: #141413;
-  --destructive-foreground: #ffffff;
-  --border: #e8e6de;
-  --input: #dcdbd6;
-  --ring: #c96442;
-  --chart-1: #b05730;
-  --chart-2: #9c87f5;
-  --chart-3: #ded8c4;
-  --chart-4: #dbd3f0;
-  --chart-5: #b4552d;
-  --sidebar: #f5f4ee;
-  --sidebar-foreground: #3d3d3a;
-  --sidebar-primary: #c96442;
-  --sidebar-primary-foreground: #fbfbfb;
-  --sidebar-accent: #e9e6dc;
-  --sidebar-accent-foreground: #343434;
-  --sidebar-border: #ebebeb;
-  --sidebar-ring: #b5b5b5;
-  --font-sans: Inter Tight, ui-sans-serif, sans-serif, system-ui;
-  --font-serif: DM Serif Display, ui-serif, serif;
-  --font-mono: Chivo Mono, ui-monospace, monospace;
-  --radius: 0.625rem;
-  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.01);
-  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.01);
-  --shadow-sm:
-    0 1px 3px 0px hsl(0 0% 0% / 0.03), 0 1px 2px -1px hsl(0 0% 0% / 0.03);
-  --shadow:
-    0 1px 3px 0px hsl(0 0% 0% / 0.03), 0 1px 2px -1px hsl(0 0% 0% / 0.03);
-  --shadow-md:
-    0 1px 3px 0px hsl(0 0% 0% / 0.03), 0 2px 4px -1px hsl(0 0% 0% / 0.03);
-  --shadow-lg:
-    0 1px 3px 0px hsl(0 0% 0% / 0.03), 0 4px 6px -1px hsl(0 0% 0% / 0.03);
-  --shadow-xl:
-    0 1px 3px 0px hsl(0 0% 0% / 0.03), 0 8px 10px -1px hsl(0 0% 0% / 0.03);
-  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.07);
-  --tracking-normal: 0em;
-  --spacing: 0.28rem;
+  --background: #f7f5f3;
+  --foreground: #183d4d;
+  --card: #ffffff;
+  --card-foreground: #183d4d;
+  --popover: #f3faff;
+  --popover-foreground: #183d4d;
+  --primary: #efb461;
+  --primary-foreground: #f5f4f0;
+  --secondary: #8578e8;
+  --secondary-foreground: #f5f4f0;
+  --muted: #e9e8e0;
+  --muted-foreground: #183d4d;
+  --accent: #eae8e0;
+  --accent-foreground: #183d4d;
+  --destructive: #f47676;
+  --border: #dcdbd6;
+  --input: #c9c6c0;
+  --ring: #efb563;
+  --chart-1: #0b83ab;
+  --chart-2: #40518d;
+  --chart-3: #00aa6d;
+  --chart-4: #bdb062;
+  --chart-5: #8059bb;
+  --sidebar: #f5f5f5;
+  --sidebar-foreground: #193d4d;
+  --sidebar-primary: #efb563;
+  --sidebar-primary-foreground: #f5f5f5;
+  --sidebar-accent: #e9e8e0;
+  --sidebar-accent-foreground: #193d4d;
+  --sidebar-border: #dcdbd3;
+  --sidebar-ring: #efb563;
+
+  --font-sans: Poppins, sans-serif;
+  --font-serif: Lora, serif;
+  --font-mono: Space Mono, monospace;
+
+  --radius: 0.975rem;
+
+  --shadow-2xs: 0px 1px 2.5px 0px #ded9d4;
+  --shadow-xs: 0px 1px 2.5px 0px #ded9d4;
+  --shadow-sm: 0px 1px 2.5px 0px #ded9d4, 0px 1px 2px -1px #ded9d4;
+  --shadow: 0px 1px 2.5px 0px #ded9d4, 0px 1px 2px -1px #ded9d4;
+  --shadow-md: 0px 1px 2.5px 0px #ded9d4, 0px 2px 4px -1px #ded9d4;
+  --shadow-lg: 0px 1px 2.5px 0px #ded9d4, 0px 4px 6px -1px #ded9d4;
+  --shadow-xl: 0px 1px 2.5px 0px #ded9d4, 0px 8px 10px -1px #ded9d4;
+  --shadow-2xl: 0px 1px 2.5px 0px #ded9d4;
 }
 
 .dark {
-  --background: #262624;
-  --foreground: #c3c0b6;
-  --card: #262624;
-  --card-foreground: #faf9f5;
-  --popover: #30302e;
-  --popover-foreground: #e5e5e2;
-  --primary: #d97757;
-  --primary-foreground: #ffffff;
-  --secondary: #faf9f5;
-  --secondary-foreground: #30302e;
-  --muted: #1b1b19;
-  --muted-foreground: #b7b5a9;
-  --accent: #1a1915;
-  --accent-foreground: #f5f4ee;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --border: #3e3e38;
-  --input: #52514a;
-  --ring: #d97757;
-  --chart-1: #b05730;
-  --chart-2: #9c87f5;
-  --chart-3: #1a1915;
-  --chart-4: #2f2b48;
-  --chart-5: #b4552d;
-  --sidebar: #1f1e1d;
-  --sidebar-foreground: #c3c0b6;
-  --sidebar-primary: #343434;
-  --sidebar-primary-foreground: #fbfbfb;
-  --sidebar-accent: #0f0f0e;
-  --sidebar-accent-foreground: #c3c0b6;
-  --sidebar-border: #ebebeb;
-  --sidebar-ring: #b5b5b5;
-  --font-sans: Inter Tight, ui-sans-serif, sans-serif, system-ui;
-  --font-serif: DM Serif Display, ui-serif, serif;
-  --font-mono: Chivo Mono, ui-monospace, monospace;
-  --radius: 0.625rem;
-  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.01);
-  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.01);
-  --shadow-sm:
-    0 1px 3px 0px hsl(0 0% 0% / 0.03), 0 1px 2px -1px hsl(0 0% 0% / 0.03);
-  --shadow:
-    0 1px 3px 0px hsl(0 0% 0% / 0.03), 0 1px 2px -1px hsl(0 0% 0% / 0.03);
-  --shadow-md:
-    0 1px 3px 0px hsl(0 0% 0% / 0.03), 0 2px 4px -1px hsl(0 0% 0% / 0.03);
-  --shadow-lg:
-    0 1px 3px 0px hsl(0 0% 0% / 0.03), 0 4px 6px -1px hsl(0 0% 0% / 0.03);
-  --shadow-xl:
-    0 1px 3px 0px hsl(0 0% 0% / 0.03), 0 8px 10px -1px hsl(0 0% 0% / 0.03);
-  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.07);
+  --background: #0e111b;
+  --foreground: #d8dfe4;
+  --card: #171a24;
+  --card-foreground: #d8dfe4;
+  --popover: #171a24;
+  --popover-foreground: #d8dfe4;
+  --primary: #26acf4;
+  --primary-foreground: #d8effc;
+  --secondary: #232838;
+  --secondary-foreground: #d8dfe4;
+  --muted: #232838;
+  --muted-foreground: #798093;
+  --accent: #232838;
+  --accent-foreground: #d8dfe4;
+  --destructive: #ff1648;
+  --border: #d8dfe426;
+  --input: #d8dfe433;
+  --ring: #00a1d0;
+  --chart-1: #00a1d0;
+  --chart-2: #697dbc;
+  --chart-3: #24ba7d;
+  --chart-4: #ccc072;
+  --chart-5: #8f68cb;
+  --sidebar: #171a24;
+  --sidebar-foreground: #d8dfe4;
+  --sidebar-primary: #00a1d0;
+  --sidebar-primary-foreground: #0e111b;
+  --sidebar-accent: #232838;
+  --sidebar-accent-foreground: #d8dfe4;
+  --sidebar-border: #d8dfe426;
+  --sidebar-ring: #00a1d0;
+
+  --shadow-2xs: 0px 1px 2px 0px #000000;
+  --shadow-xs: 0px 1px 2px 0px #000000;
+  --shadow-sm: 0px 1px 2px 0px #000000, 0px 1px 2px -1px #000000;
+  --shadow: 0px 1px 2px 0px #000000, 0px 1px 2px -1px #000000;
+  --shadow-md: 0px 1px 2px 0px #000000, 0px 2px 4px -1px #000000;
+  --shadow-lg: 0px 1px 2px 0px #000000, 0px 4px 6px -1px #000000;
+  --shadow-xl: 0px 1px 2px 0px #000000, 0px 8px 10px -1px #000000;
+  --shadow-2xl: 0px 1px 2px 0px #000000;
 }
 
 @theme inline {
@@ -140,7 +126,6 @@ body {
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);

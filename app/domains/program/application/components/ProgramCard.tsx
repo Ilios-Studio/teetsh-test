@@ -15,7 +15,7 @@ type ProgramCardProps = {
 export function ProgramCard({ program }: ProgramCardProps) {
   return (
     <Link key={program.documentId} to={`/programs/${program.documentId}`}>
-      <Card className="hover:border-primary hover:shadow-md transition-all duration-100 h-full flex flex-col">
+      <Card className="hover:border-secondary hover:shadow-md transition-all duration-100 h-full flex flex-col">
         <CardHeader className="flex-1 flex flex-col">
           <CardTitle className="text-lg font-bold text-foreground mb-4 min-h-[3rem] flex items-start line-clamp-2">
             {program.name}

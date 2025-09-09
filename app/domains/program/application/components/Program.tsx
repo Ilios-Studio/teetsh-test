@@ -1,15 +1,9 @@
-import { programQueries } from "../queries";
+import type { Program } from "../../domain";
 
 interface ProgramProps {
-  documentId: string;
+  data: Program;
 }
 
-export function Program({ documentId }: ProgramProps) {
-  const { data, isLoading, error } = programQueries.useProgram(documentId);
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
-  if (!data) return <div>No data</div>;
-
+export function Program({ data }: ProgramProps) {
   return <pre>{JSON.stringify(data, null, 2)}</pre>;
 }

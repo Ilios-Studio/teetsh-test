@@ -68,7 +68,7 @@ export type getProgramsFilter = {
   };
 };
 
-export interface ProgramRepository {
+export interface IProgramRepository {
   getPrograms: (filter?: getProgramsFilter) => Promise<Program[]>;
   getProgram: (documentId: string) => Promise<Program>;
 }

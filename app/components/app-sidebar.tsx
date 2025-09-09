@@ -1,3 +1,4 @@
+import { Link, useLocation } from "react-router";
 import {
   Sidebar,
   SidebarContent,
@@ -8,7 +9,6 @@ import {
   SidebarMenuItem,
 } from "./ui/sidebar";
 
-import { Link } from "react-router";
 import { SIDEBAR_ITEMS } from "~/lib/constants";
 
 export function AppSidebar() {
@@ -20,18 +20,25 @@ export function AppSidebar() {
       <SidebarContent className="p-4">
         <SidebarMenu>
           {SIDEBAR_ITEMS.map((item) => (
-            <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton asChild>
-                <Link to={item.url}>
-                  <item.icon />
-                  <span>{item.title}</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
+            <AppSidebarItem key={item.title} item={item} />
           ))}
         </SidebarMenu>
       </SidebarContent>
       <SidebarFooter />
     </Sidebar>
+  );
+}
+
+function AppSidebarItem({ item }: { item: (typeof SIDEBAR_ITEMS)[number] }) {
+  const isActive = useLocation().pathname === item.url;
+  return (
+    <SidebarMenuItem key={item.title}>
+      <SidebarMenuButton asChild isActive={isActive}>
+        <Link to={item.url}>
+          <item.icon />
+          <span>{item.title}</span>
+        </Link>
+      </SidebarMenuButton>
+    </SidebarMenuItem>
   );
 }

@@ -10,10 +10,21 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <>
-      <h1>Hello</h1>
+      <h1 className="text-4xl font-bold text-foreground mb-4">
+        Teetsh - Progression Test
+      </h1>
       <p>
-        This is a test project for the Senior Software Engineer position at
-        Teetsh.
+        Ceci est un projet de test pour le poste de Senior Software Engineer
+        chez{" "}
+        <a
+          href="https://www.teetsh.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary underline"
+        >
+          Teetsh
+        </a>
+        .
       </p>
     </>
   );
