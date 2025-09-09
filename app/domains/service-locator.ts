@@ -5,6 +5,6 @@
  *
  */
 
-import { StrapiProgressionRepository } from "./progression/infrastructure/strapi-repository";
+import { StrapiProgramRepository } from "./program/infrastructure/strapi-repository";
 
-export const ProgressionRepository = StrapiProgressionRepository();
+export const ProgramRepository = StrapiProgramRepository();

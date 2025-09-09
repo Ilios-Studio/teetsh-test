@@ -10,6 +10,7 @@ import {
 } from "react-router";
 
 import { QueryProvider } from "./lib/query-client";
+import { Layout as RootLayout } from "./components/layout";
 import type { Route } from "./+types/root";
 
 export const links: Route.LinksFunction = () => [
@@ -35,7 +36,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <QueryProvider>{children}</QueryProvider>
+        <QueryProvider>
+          <RootLayout>{children}</RootLayout>
+        </QueryProvider>
         <ScrollRestoration />
         <Scripts />
       </body>

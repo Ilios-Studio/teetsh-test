@@ -1,4 +1,4 @@
-export interface Progression {
+export interface Program {
   id: number;
   name: string;
   shortDescription: string;
@@ -62,6 +62,13 @@ interface Item {
   attachments: any[];
 }
 
-export interface ProgressionRepository {
-  getProgression: (documentId: string) => Promise<Progression>;
+export type getProgramsFilter = {
+  filters: {
+    limit: number;
+  };
+};
+
+export interface ProgramRepository {
+  getPrograms: (filter?: getProgramsFilter) => Promise<Program[]>;
+  getProgram: (documentId: string) => Promise<Program>;
 }

@@ -8,5 +8,13 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <h1>Hello</h1>
+      <p>
+        This is a test project for the Senior Software Engineer position at
+        Teetsh.
+      </p>
+    </>
+  );
 }
