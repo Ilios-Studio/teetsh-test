@@ -1,12 +1,17 @@
-import type { Program } from "../../domain";
+import type { Matiere, Program } from "../../domain";
 import { Periode } from "./Periode";
 
 interface ProgramProps {
   data: Program;
+  selectedMatiere: Matiere;
 }
 
-export function Program({ data }: ProgramProps) {
+export function Program({ data, selectedMatiere }: ProgramProps) {
   const gridCols = `repeat(${data.periodes.length}, 1fr`;
+
+  const items = data.matieres
+    .find((m) => m.id === selectedMatiere.id)
+    ?.domaines.flatMap((domaine) => domaine.items);
 
   return (
     <>
@@ -18,9 +23,7 @@ export function Program({ data }: ProgramProps) {
           <Periode
             key={p.id}
             periode={p}
-            matieres={data.matieres.filter(
-              (m) => m.programmationId === data.programmationId
-            )}
+            items={(items ?? []).filter((item) => item.periodeId === p.id)}
           />
         ))}
       </div>

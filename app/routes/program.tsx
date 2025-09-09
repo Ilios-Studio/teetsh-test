@@ -19,7 +19,7 @@ export default function ProgressionRoute() {
           {data.name}
         </h1>
       </header>
-      <Program data={data} />
+      <Program data={data} selectedMatiere={data.matieres[0]} />
     </>
   );
 }
