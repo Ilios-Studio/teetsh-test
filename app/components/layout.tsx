@@ -12,12 +12,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <SidebarProvider>
       <AppSidebar />
       <main className="w-full px-4 bg-sidebar/30 max-w-full overflow-x-hidden">
-        <nav className="h-[8vh] flex items-center justify-between py-4">
+        <nav className="h-[8vh] flex items-center  py-4">
           <SidebarTrigger />
           {shouldDisplayBackButton && (
             <Button asChild variant="ghost">
-              <Link to="/programs" className="font-medium">
-                <ArrowLeftIcon />
+              <Link to="/programs" className="font-medium text-xs">
+                <ArrowLeftIcon className="size-3" />
                 Retour
               </Link>
             </Button>

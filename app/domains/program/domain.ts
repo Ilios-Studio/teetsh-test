@@ -24,7 +24,7 @@ export interface Program {
   documentId: string;
 }
 
-interface Periode {
+export interface Periode {
   id: string;
   name: string;
   color: string;
@@ -34,7 +34,7 @@ interface Periode {
   programmationId: string;
 }
 
-interface Matiere {
+export interface Matiere {
   id: string;
   name: string;
   color: string;
@@ -43,7 +43,7 @@ interface Matiere {
   programmationId: string;
 }
 
-interface Domaine {
+export interface Domaine {
   id: string;
   name: string;
   color: string;
@@ -51,7 +51,7 @@ interface Domaine {
   matiereId: string;
 }
 
-interface Item {
+export interface Item {
   y: number;
   id: string;
   value: string;
