@@ -21,7 +21,12 @@ export function SelectMatiere({
   setSelectedMatiere,
 }: Props) {
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Enter' || e.key === ' ') {
+    if (
+      e.key === "ArrowDown" ||
+      e.key === "ArrowUp" ||
+      e.key === "Enter" ||
+      e.key === " "
+    ) {
       e.stopPropagation();
     }
   }, []);
@@ -34,15 +39,20 @@ export function SelectMatiere({
       }
       aria-label="Sélectionner une matière"
     >
-      <SelectTrigger 
+      <SelectTrigger
         className="w-[180px] bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
         onKeyDown={handleKeyDown}
+        data-testid="select-matiere-trigger"
       >
         <SelectValue placeholder="Sélectionner une matière" />
       </SelectTrigger>
       <SelectContent className="bg-white">
         {matieres.map((matiere) => (
-          <SelectItem key={matiere.id} value={matiere.id}>
+          <SelectItem
+            key={matiere.id}
+            value={matiere.id}
+            data-testid={`select-matiere-option-${matiere.id}`}
+          >
             {matiere.name}
           </SelectItem>
         ))}

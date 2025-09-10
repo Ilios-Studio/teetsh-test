@@ -16,7 +16,7 @@ export function Program({ data }: ProgramProps) {
     matieres.find((m) => m.id === selectedMatiere?.id)?.domaines ?? [];
 
   return (
-    <>
+    <div data-testid="program-container">
       <header className="w-full h-[10vh] flex items-start justify-between py-4 gap-4 rounded-2xl mb-[2vh]">
         <h1
           className="text-2xl font-bold text-foreground max-w-none lg:max-w-[40vw] line-clamp-2 break-words overflow-hidden text-ellipsis"
@@ -64,6 +64,6 @@ export function Program({ data }: ProgramProps) {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
