@@ -20,13 +20,13 @@ export function Domain({ domain, periodes, isLast }: Props) {
     <>
       <div
         className={cn(
-          "h-10 flex items-center justify-start px-4 w-full sticky top-13 z-10",
+          "h-8 flex items-center justify-start px-4 w-full  sticky top-13 z-10",
           colorClass
         )}
       >
         <span className="sticky left-4">{name}</span>
       </div>
-      <div className="flex pb-4 gap-2">
+      <div className="flex gap-2">
         {periodes.map((p) => (
           <Periode
             key={p.id}

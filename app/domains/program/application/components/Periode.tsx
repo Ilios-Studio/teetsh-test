@@ -1,14 +1,14 @@
 import dayjs from "dayjs";
 import "dayjs/locale/fr";
-import { Card, CardDescription, CardHeader } from "~/components/ui/card";
 import { cn } from "~/lib/utils";
-import type { Item, Periode } from "../../domain";
+import type { Item as IItem, Periode } from "../../domain";
+import { Item } from "./Item";
 
 dayjs.locale("fr");
 
 type PeriodeProps = {
   periode: Periode;
-  items?: Item[];
+  items?: IItem[];
   isLast?: boolean;
 };
 
@@ -23,14 +23,14 @@ export function Periode({ periode, items, isLast }: PeriodeProps) {
   return (
     <section
       className={cn(
-        "shrink-0 w-3xs p-2",
+        "shrink-0 w-[80vw] md:w-2xs p-2",
         color50Class,
         isLast && "rounded-b-lg"
       )}
     >
       <main className="flex flex-col gap-2 py-2">
         {items?.map((item) => (
-          <ItemCard
+          <Item
             key={item.id}
             item={item}
             hoverBorderColor={hoverBorderColorClass}
@@ -38,27 +38,5 @@ export function Periode({ periode, items, isLast }: PeriodeProps) {
         ))}
       </main>
     </section>
-  );
-}
-
-type ItemCardProps = {
-  item: Item;
-  hoverBorderColor: string;
-};
-
-export function ItemCard({ item, hoverBorderColor }: ItemCardProps) {
-  return (
-    <Card
-      className={cn(
-        "transition-all duration-100 h-full flex flex-col rounded-sm shadow-none",
-        hoverBorderColor
-      )}
-    >
-      <CardHeader>
-        <CardDescription>
-          <div dangerouslySetInnerHTML={{ __html: item.value }} />
-        </CardDescription>
-      </CardHeader>
-    </Card>
   );
 }
