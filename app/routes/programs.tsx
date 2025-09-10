@@ -1,6 +1,13 @@
 import { ProgramsGrid } from "~/domains/program/application/components/ProgramsGrid";
+import type { Route } from "./+types/programs";
 import { programQueries } from "~/domains/program/application/queries";
 
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Teetsh - Progression" },
+    { name: "description", content: "Teetsh - Progression" },
+  ];
+}
 export default function ProgressionRoute() {
   const { data, isLoading, error } = programQueries.usePrograms();
 
