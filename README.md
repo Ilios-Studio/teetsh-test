@@ -13,76 +13,56 @@ Test project for the Senior Software Engineer position at Teetsh. <3
 - React Query -> Query management to cache data.
 - Zustand -> State management. Preferred over Context to avoid memory leaks.
 
-## Installation
+## CMDS
 
 ```bash
 npm install
 ```
 
-## Launch
-
 ```bash
 npm run dev
 ```
 
-## Build
-
 ```bash
-npm run build
+npm run test
 ```
 
-> Env vars : VITE_BASE_STRAPI_API_URL
+```
+Env vars :
+
+- VITE_BASE_STRAPI_API_URL
+- VITE_STRAPI_API_TOKEN
+```
+
+In order to visualize the requested progression, navigate here : http://localhost:5173/programs/wwdnw9553da0cdypjq2t9p3f
+
+In order to visualize the a progressions with multiple matieres : http://localhost:5173/programs/zv041830n3auk8w52odgmb4b
 
 ## project structure
 
 ```
-src/
-├── components/
-│   ├── ui/                          # shadcn components
-│   │   ├── button.tsx
-│   │   ├── dialog.tsx
-│   │   ├── tabs.tsx
-│   │   └── ...
-│   └── layout/
-│       ├── Header.tsx
-│       └── Layout.tsx
-├── domains/
-│   └── progression/
-│       ├── types.ts                 # Domain types & interfaces
-│       ├── infrastructure/
-│       │   ├── api.ts              # API calls (fetchProgression, etc.)
-│       │   └── queries.ts          # React Query hooks
-│       ├── store/
-│       │   └── progressionStore.ts # Zustand store (UI states)
-│       └── components/
-│           ├── ProgressionView.tsx  # Main adaptive component
-│           ├── desktop/
-│           │   ├── Grid.tsx        # Carousel container
-│           │   ├── Periode.tsx     # Period slide
-│           │   ├── Domaine.tsx     # Domain row
-│           │   ├── ProgressionItem.tsx
-│           │   └── TimelineHeader.tsx
-│           ├── mobile/
-│           │   ├── MobileListView.tsx
-│           │   ├── PeriodFilter.tsx
-│           │   └── DomainAccordion.tsx
-│           └── shared/
-│               ├── ItemModal.tsx   # Shared modal
-│               └── ItemContent.tsx # Sanitized HTML display
-├── shared/
-│   ├── hooks/
-│   │   └── useViewport.ts          # Mobile/desktop detection
-│   ├── lib/
-│   │   ├── utils.ts               # shadcn utils + helpers
-│   │   ├── sanitize.ts            # DOMPurify wrapper
-│   │   └── queryClient.ts         # React Query setup
-│   └── providers/
-│       └── AppProviders.tsx       # React Query + other providers
-├── pages/
-│   └── ProgressionPage.tsx
-├── App.tsx
-└── main.tsx
-
+  app/
+  ├── components/
+  │   ├── ui/                         # shadcn components
+  ├── domains/
+  │   ├── service-locator.ts          # Dependency injection
+  │   └── program/                    # Domain-driven design structure
+  │       ├── domain.ts               # Domain types & interfaces
+  │       ├── infrastructure/
+  │       │   └── strapi-repository.ts # Strapi API implementation
+  │       └── application/
+  │           ├── queries.ts          # TanStack Query hooks
+  │           └── components/         # UI components
+  ├── hooks/
+  ├── lib/
+  ├── routes/                       # React Router pages
+  │   ├── home.tsx                  # Home page
+  │   ├── program.tsx               # Single program view
+  │   └── programs.tsx              # Programs list
+  ├── app.css                       # Global styles
+  ├── dataset.json                  # Mock/sample data
+  ├── root.tsx                      # App root component
+  └── routes.ts                     # Route definitions
 
 ```
 
@@ -95,6 +75,7 @@ src/
 - Add shortcuts (key bindings) -> with react-hotkeys
 - E2E tests with Cypress
 - Better responsive -> mobile handling. I would create an adaptive version of the Program view. Probaby something based on the Y axis, so basically scrolling down.
+- More unit tests for hooks, components, etc.
 
 If editing:
 
@@ -108,6 +89,7 @@ If editing:
 - DTO extraction from the provided dataset (IRL we would have a different domain interface for the frontend than the API DTO but for simplicity we stick to the provided dataset)
 - Accessibility -> review of code to improve accessibility and fix possibly missing aria attributes or wrong html semantic
 - Help on some css attrs, especially for tailwind conf
+- Supervising AI to write tests
 
 ## Points of attention
 

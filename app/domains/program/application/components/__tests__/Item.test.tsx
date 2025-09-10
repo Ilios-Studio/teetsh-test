@@ -57,7 +57,7 @@ describe("Item", () => {
 
     render(<Item item={mockItem} hoverBorderColor="hover:border-blue-400" />);
 
-    const dialogTrigger = screen.getByTestId("item-dialog-trigger");
+    const dialogTrigger = screen.getByTestId("item-1-dialog-trigger");
 
     // Click to open dialog
     await user.click(dialogTrigger);

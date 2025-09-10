@@ -1,19 +1,31 @@
 import Strapi from "strapi-sdk-js";
 
-if (!import.meta.env.VITE_BASE_STRAPI_API_URL) {
-  throw new Error("VITE_BASE_STRAPI_API_URL is not set");
+function createStrapiClient(): Strapi {
+  if (process.env.NODE_ENV === "test") {
+    return new Strapi({
+      url: process.env.API_URL || "http://localhost:1337",
+      prefix: "/api",
+    });
+  }
+
+  // Production/development configuration
+  if (!process.env.VITE_BASE_STRAPI_API_URL) {
+    throw new Error("VITE_BASE_STRAPI_API_URL is not set");
+  }
+
+  if (!process.env.VITE_STRAPI_API_TOKEN) {
+    throw new Error("VITE_STRAPI_API_TOKEN is not set");
+  }
+
+  const client = new Strapi({
+    url: process.env.VITE_BASE_STRAPI_API_URL,
+    prefix: "/api",
+  });
+
+  client.axios.defaults.headers.common["Authorization"] =
+    `Bearer ${process.env.VITE_STRAPI_API_TOKEN}`;
+
+  return client;
 }
 
-if (!import.meta.env.VITE_STRAPI_API_TOKEN) {
-  throw new Error("VITE_STRAPI_API_TOKEN is not set");
-}
-
-const strapiClient = new Strapi({
-  url: import.meta.env.VITE_BASE_STRAPI_API_URL,
-  prefix: "/api",
-});
-
-strapiClient.axios.defaults.headers.common["Authorization"] =
-  `Bearer ${import.meta.env.VITE_STRAPI_API_TOKEN}`;
-
-export { strapiClient };
+export const strapiClient = createStrapiClient();

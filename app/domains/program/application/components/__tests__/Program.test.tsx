@@ -135,4 +135,31 @@ describe("Program", () => {
     expect(screen.queryByText("Nombres")).not.toBeInTheDocument();
     expect(screen.queryByText("Compter jusqu'à 100")).not.toBeInTheDocument();
   });
+
+  it("shows correct items based on selected subject", async () => {
+    const user = userEvent.setup();
+    render(<Program data={mockProgram} />);
+
+    // Initially shows item-1 when matiere-1 (Mathématiques) is selected
+    expect(
+      screen.getByTestId("item-item-1-dialog-trigger")
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByTestId("item-item-2-dialog-trigger")
+    ).not.toBeInTheDocument();
+
+    // Click on the select trigger to change subject
+    await user.click(screen.getByTestId("select-matiere-trigger"));
+
+    // Click on matiere-2 (Français)
+    await user.click(screen.getByTestId("select-matiere-option-matiere-2"));
+
+    // Now item-2 should be present and item-1 should not be
+    expect(
+      screen.getByTestId("item-item-2-dialog-trigger")
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByTestId("item-item-1-dialog-trigger")
+    ).not.toBeInTheDocument();
+  });
 });

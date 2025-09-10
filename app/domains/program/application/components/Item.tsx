@@ -15,7 +15,7 @@ export function Item({ item, hoverBorderColor }: ItemProps) {
     <Dialog>
       <DialogTrigger
         aria-label="Ouvrir l'item"
-        data-testid="item-dialog-trigger"
+        data-testid={`item-${item.id}-dialog-trigger`}
       >
         <ItemCard item={item} hoverBorderColor={hoverBorderColor} />
       </DialogTrigger>

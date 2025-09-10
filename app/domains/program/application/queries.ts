@@ -16,3 +16,4 @@ const createProgramQueries = (repo: IProgramRepository) => ({
 });
 
 export const programQueries = createProgramQueries(ProgramRepository);
+export { createProgramQueries };
