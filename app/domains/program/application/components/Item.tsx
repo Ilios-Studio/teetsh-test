@@ -13,7 +13,7 @@ type ItemProps = {
 export function Item({ item, hoverBorderColor }: ItemProps) {
   return (
     <Dialog>
-      <DialogTrigger>
+      <DialogTrigger aria-label="Ouvrir l'item">
         <ItemCard item={item} hoverBorderColor={hoverBorderColor} />
       </DialogTrigger>
       <DialogContent className="shadow-none">
@@ -32,9 +32,10 @@ export function ItemCard({ item, hoverBorderColor }: ItemCardProps) {
   return (
     <Card
       className={cn(
-        "transition-all duration-100 h-full flex flex-col rounded-sm shadow-none",
+        "transition-all duration-100 h-full flex flex-col rounded-sm shadow-none focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
         hoverBorderColor
       )}
+      tabIndex={0}
     >
       <CardHeader>
         <CardDescription>

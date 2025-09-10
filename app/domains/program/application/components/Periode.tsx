@@ -27,6 +27,8 @@ export function Periode({ periode, items, isLast }: PeriodeProps) {
         color50Class,
         isLast && "rounded-b-lg"
       )}
+      role="cell"
+      aria-label={`Période ${periode.name}, ${items?.length || 0} éléments`}
     >
       <main className="flex flex-col gap-2 py-2">
         {items?.map((item) => (

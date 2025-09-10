@@ -23,10 +23,12 @@ export function Domain({ domain, periodes, isLast }: Props) {
           "h-8 flex items-center justify-start px-4 w-full  sticky top-13 z-10",
           colorClass
         )}
+        role="rowheader"
+        aria-label={`Domaine: ${name}`}
       >
         <span className="sticky left-4">{name}</span>
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-2" role="row">
         {periodes.map((p) => (
           <Periode
             key={p.id}

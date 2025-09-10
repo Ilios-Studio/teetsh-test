@@ -94,6 +94,7 @@ src/
 - Filters for more granular display -> filter by week, by subject, by domain...
 - Add shortcuts (key bindings) -> with react-hotkeys
 - E2E tests with Cypress
+- Better responsive -> mobile handling. I would create an adaptive version of the Program view. Probaby something based on the Y axis, so basically scrolling down.
 
 If editing:
 
@@ -105,6 +106,8 @@ If editing:
 
 - Project structure definition and trade-offs between technologies
 - DTO extraction from the provided dataset (IRL we would have a different domain interface for the frontend than the API DTO but for simplicity we stick to the provided dataset)
+- Accessibility -> review of code to improve accessibility and fix possibly missing aria attributes or wrong html semantic
+- Help on some css attrs, especially for tailwind conf
 
 ## Points of attention
 
