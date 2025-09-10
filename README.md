@@ -38,6 +38,8 @@ In order to visualize the requested progression, navigate here : http://localhos
 
 In order to visualize the a progressions with multiple matieres : http://localhost:5173/programs/zv041830n3auk8w52odgmb4b
 
+Live demo : https://teetsh.romain-philippe.com/programs/i6tzqij90mw2ufndn6rjbual
+
 ## project structure
 
 ```
