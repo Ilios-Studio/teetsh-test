@@ -13,7 +13,10 @@ type ItemProps = {
 export function Item({ item, hoverBorderColor }: ItemProps) {
   return (
     <Dialog>
-      <DialogTrigger aria-label="Ouvrir l'item">
+      <DialogTrigger
+        aria-label="Ouvrir l'item"
+        data-testid="item-dialog-trigger"
+      >
         <ItemCard item={item} hoverBorderColor={hoverBorderColor} />
       </DialogTrigger>
       <DialogContent className="shadow-none">
